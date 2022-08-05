@@ -34,4 +34,23 @@ typedef struct icmpheader {
 	unsigned short sequeue;
 }icmpheader;
 
+typedef struct udpheader {
+	unsigned short int udph_srcport;
+	unsigned short int udph_destport;
+	unsigned short int udph_len;
+	unsigned short int udph_chksum;
+}udpheader;
+
+typedef struct tcpheader {
+	unsigned short int tcph_srcport;
+	unsigned short int tcph_destport;
+	unsigned int tcph_seqnum;
+	unsigned int tcph_acknum;
+	unsigned char tcph_reserved:4, tcph_offset:4;
+	unsigned char tcph_flags;
+	unsigned short int tcph_win;
+	unsigned short int tcph_chksum;
+	unsigned short int tcph_urgptr;
+}tcpheader;
+
 #endif
